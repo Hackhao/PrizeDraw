@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="1111.0" style="-fx-background-color: ab4146;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dearBug.Controller">
+   <bottom>
+      <Label alignment="CENTER" prefHeight="34.0" prefWidth="731.0" text="2017年南京大学计算机科学与技术系Dear Bug新年晚会" textAlignment="CENTER" textFill="#e8e8e8" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+   </bottom>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" side="LEFT" stylesheets="@../res/tabPane.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="一等奖">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="612.0" prefWidth="1050.0">
+                    <children>
+                        <Button id="prize1" fx:id="prize1button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="428.0" layoutY="473.0" mnemonicParsing="false" onAction="#drawPrize1" prefHeight="73.0" prefWidth="195.0" stylesheets="@../res/drawButton.css" text="开始" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Source Code Pro Bold" size="36.0" />
+                            </font>
+                        </Button>
+                        <Label layoutX="407.0" layoutY="65.0" text="一等奖" textFill="#f8f8f8">
+                            <font>
+                                <Font name="Source Sans Pro Bold" size="80.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="prize1number" layoutX="284.0" layoutY="164.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="200.0" />
+                           </font>
+                        </Label>
+                    </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="二等奖">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <Button id="prize1" fx:id="prize2button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="204.0" layoutY="471.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="195.0" stylesheets="@../res/drawButton.css" text="开始" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Source Code Pro Bold" size="36.0" />
+                            </font>
+                        </Button>
+                        <Label layoutX="185.0" layoutY="88.0" text="二等奖" textFill="#f8f8f8">
+                            <font>
+                                <Font name="Source Sans Pro Bold" size="80.0" />
+                            </font>
+                        </Label>
+                        <ListView layoutX="657.0" layoutY="57.0" prefHeight="515.0" prefWidth="365.0" />
+                        <Label fx:id="prize2number" layoutX="128.0" layoutY="207.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="150.0" />
+                           </font>
+                        </Label>
+                    </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="三等奖">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                          <Button id="prize1" fx:id="prize3button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="598.0" layoutY="473.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="195.0" stylesheets="@../res/drawButton.css" text="开始" textAlignment="CENTER" textFill="WHITE">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="36.0" />
+                              </font>
+                          </Button>
+                          <Label layoutX="294.0" layoutY="22.0" text="三等奖" textFill="#f8f8f8">
+                              <font>
+                                  <Font name="Source Code Pro Black" size="80.0" />
+                              </font>
+                          </Label>
+                        <Label fx:id="prize3number1" layoutX="59.0" layoutY="118.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="86.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="prize3list" layoutX="804.0" layoutY="41.0" prefHeight="545.0" prefWidth="254.0" />
+                        <TextField fx:id="prize3add" alignment="CENTER_RIGHT" layoutX="432.0" layoutY="500.0" prefHeight="58.0" prefWidth="132.0" promptText="10">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="26.0" />
+                           </font></TextField>
+                        <Label layoutX="331.0" layoutY="458.0" prefHeight="32.0" prefWidth="241.0" text="请输入抽奖个数(默认10)" textFill="#ba8baf">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prize3number3" layoutX="552.0" layoutY="117.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="86.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prize3number2" layoutX="309.0" layoutY="117.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="86.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prize3number5" layoutX="306.0" layoutY="222.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="86.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prize3number6" layoutX="549.0" layoutY="222.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="86.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prize3number4" layoutX="56.0" layoutY="223.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="86.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prize3number8" layoutX="306.0" layoutY="331.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="86.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prize3number9" layoutX="549.0" layoutY="331.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="86.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prize3number7" layoutX="56.0" layoutY="332.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="86.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prize3number10" layoutX="56.0" layoutY="444.0" text="0000">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="86.0" />
+                           </font>
+                        </Label>
+                      </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="幸运奖">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                          <Button id="prize1" fx:id="prizeLuckyButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="598.0" layoutY="473.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="195.0" stylesheets="@../res/drawButton.css" text="开始" textAlignment="CENTER" textFill="WHITE">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="36.0" />
+                              </font>
+                          </Button>
+                          <Label layoutX="294.0" layoutY="22.0" text="幸运奖" textFill="#f8f8f8">
+                              <font>
+                                  <Font name="Source Code Pro Black" size="80.0" />
+                              </font>
+                          </Label>
+                          <Label fx:id="prizeLucky1" layoutX="59.0" layoutY="118.0" text="0000">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="86.0" />
+                              </font>
+                          </Label>
+                          <ListView fx:id="prizeLuckyList" layoutX="804.0" layoutY="41.0" prefHeight="545.0" prefWidth="254.0" />
+                          <TextField fx:id="prizeLuckyAdd" alignment="CENTER_RIGHT" layoutX="432.0" layoutY="500.0" prefHeight="58.0" prefWidth="132.0" promptText="10">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="26.0" />
+                           </font></TextField>
+                          <Label layoutX="331.0" layoutY="458.0" prefHeight="32.0" prefWidth="241.0" text="请输入抽奖个数(默认10)" textFill="#ba8baf">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="20.0" />
+                              </font>
+                          </Label>
+                          <Label fx:id="prizeLucky3" layoutX="552.0" layoutY="117.0" text="0000">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="86.0" />
+                              </font>
+                          </Label>
+                          <Label fx:id="prizeLucky2" layoutX="309.0" layoutY="117.0" text="0000">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="86.0" />
+                              </font>
+                          </Label>
+                          <Label fx:id="prizeLucky5" layoutX="306.0" layoutY="222.0" text="0000">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="86.0" />
+                              </font>
+                          </Label>
+                          <Label fx:id="prizeLucky6" layoutX="549.0" layoutY="222.0" text="0000">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="86.0" />
+                              </font>
+                          </Label>
+                          <Label fx:id="prizeLucky4" layoutX="56.0" layoutY="223.0" text="0000">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="86.0" />
+                              </font>
+                          </Label>
+                          <Label fx:id="prizeLucky8" layoutX="306.0" layoutY="331.0" text="0000">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="86.0" />
+                              </font>
+                          </Label>
+                          <Label fx:id="prizeLucky9" layoutX="549.0" layoutY="331.0" text="0000">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="86.0" />
+                              </font>
+                          </Label>
+                          <Label fx:id="prizeLucky7" layoutX="56.0" layoutY="332.0" text="0000">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="86.0" />
+                              </font>
+                          </Label>
+                          <Label fx:id="prizeLucky10" layoutX="56.0" layoutY="444.0" text="0000">
+                              <font>
+                                  <Font name="Source Code Pro Bold" size="86.0" />
+                              </font>
+                          </Label>
+                      </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="中奖记录">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
