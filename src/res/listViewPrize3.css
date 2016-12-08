@@ -1,0 +1,30 @@
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    /* 3:, 4: */
+    -fx-background-color: transparent;
+    -fx-text-fill: #181818; /* 5 */
+}
+.list-cell {
+    -fx-text-fill: #282828; /* 5 */
+    -fx-font: 60pt "Source Code Pro Bold";
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-label-padding: -20px;
+}
+.list-cell:odd { -fx-background-color: transparent; /* 1 */ }
+.list-cell:even { -fx-background-color: transparent; /* for information */ }
+.list-cell:filled:hover {
+    -fx-background-color: transparent; /* 2 */
+    -fx-text-fill: #282828; /* 5 */
+}
+.list-view .scroll-bar:vertical .increment-arrow,
+.list-view .scroll-bar:vertical .decrement-arrow,
+.list-view .scroll-bar:vertical .increment-button,
+.list-view .scroll-bar:vertical .decrement-button {
+    -fx-padding:0;
+}
+.list-view .scroll-bar:horizontal .increment-arrow,
+.list-view .scroll-bar:horizontal .decrement-arrow,
+.list-view .scroll-bar:horizontal .increment-button,
+.list-view .scroll-bar:horizontal .decrement-button {
+    -fx-padding:0;
+}

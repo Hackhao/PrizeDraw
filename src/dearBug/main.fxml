@@ -50,7 +50,7 @@
             <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                     <children>
-                        <Button id="prize1" fx:id="prize2button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="204.0" layoutY="471.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="195.0" stylesheets="@../res/drawButton.css" text="开始" textAlignment="CENTER" textFill="WHITE">
+                        <Button id="prize1" fx:id="prize2button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="204.0" layoutY="471.0" mnemonicParsing="false" onAction="#drawPrize2" prefHeight="73.0" prefWidth="195.0" stylesheets="@../res/drawButton.css" text="开始" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font name="Source Code Pro Bold" size="36.0" />
                             </font>
@@ -60,7 +60,7 @@
                                 <Font name="Source Sans Pro Bold" size="80.0" />
                             </font>
                         </Label>
-                        <ListView layoutX="657.0" layoutY="57.0" prefHeight="515.0" prefWidth="365.0" />
+                        <ListView fx:id="prize2numberlist" layoutX="670.0" layoutY="34.0" prefHeight="531.0" prefWidth="366.0" style="-fx-background-color: transparent;" stylesheets="@../res/listViewPrize2.css" />
                         <Label fx:id="prize2number" layoutX="128.0" layoutY="207.0" text="0000">
                            <font>
                               <Font name="Source Code Pro Bold" size="150.0" />
@@ -73,7 +73,7 @@
               <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                       <children>
-                          <Button id="prize1" fx:id="prize3button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="598.0" layoutY="473.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="195.0" stylesheets="@../res/drawButton.css" text="开始" textAlignment="CENTER" textFill="WHITE">
+                          <Button id="prize1" fx:id="prize3button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="557.0" layoutY="473.0" mnemonicParsing="false" onAction="#drawPrize3" prefHeight="73.0" prefWidth="195.0" stylesheets="@../res/drawButton.css" text="开始" textAlignment="CENTER" textFill="WHITE">
                               <font>
                                   <Font name="Source Code Pro Bold" size="36.0" />
                               </font>
@@ -88,32 +88,32 @@
                               <Font name="Source Code Pro Bold" size="86.0" />
                            </font>
                         </Label>
-                        <ListView fx:id="prize3list" layoutX="804.0" layoutY="41.0" prefHeight="545.0" prefWidth="254.0" />
-                        <TextField fx:id="prize3add" alignment="CENTER_RIGHT" layoutX="432.0" layoutY="500.0" prefHeight="58.0" prefWidth="132.0" promptText="10">
+                        <ListView fx:id="prize3numberlist" layoutX="772.0" layoutY="41.0" prefHeight="545.0" prefWidth="286.0" style="-fx-background-color: transparent;" stylesheets="@../res/listViewPrize3.css" />
+                        <TextField fx:id="prize3add" alignment="CENTER_RIGHT" layoutX="391.0" layoutY="500.0" prefHeight="58.0" prefWidth="132.0" promptText="10">
                            <font>
                               <Font name="Source Code Pro Bold" size="26.0" />
                            </font></TextField>
-                        <Label layoutX="331.0" layoutY="458.0" prefHeight="32.0" prefWidth="241.0" text="请输入抽奖个数(默认10)" textFill="#ba8baf">
+                        <Label layoutX="290.0" layoutY="458.0" prefHeight="32.0" prefWidth="241.0" text="请输入抽奖个数(默认10)" textFill="#ba8baf">
                            <font>
                               <Font name="Source Code Pro Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label fx:id="prize3number3" layoutX="552.0" layoutY="117.0" text="0000">
+                        <Label fx:id="prize3number3" layoutX="530.0" layoutY="117.0" text="0000">
                            <font>
                               <Font name="Source Code Pro Bold" size="86.0" />
                            </font>
                         </Label>
-                        <Label fx:id="prize3number2" layoutX="309.0" layoutY="117.0" text="0000">
+                        <Label fx:id="prize3number2" layoutX="291.0" layoutY="116.0" text="0000">
                            <font>
                               <Font name="Source Code Pro Bold" size="86.0" />
                            </font>
                         </Label>
-                        <Label fx:id="prize3number5" layoutX="306.0" layoutY="222.0" text="0000">
+                        <Label fx:id="prize3number5" layoutX="288.0" layoutY="221.0" text="0000">
                            <font>
                               <Font name="Source Code Pro Bold" size="86.0" />
                            </font>
                         </Label>
-                        <Label fx:id="prize3number6" layoutX="549.0" layoutY="222.0" text="0000">
+                        <Label fx:id="prize3number6" layoutX="527.0" layoutY="222.0" text="0000">
                            <font>
                               <Font name="Source Code Pro Bold" size="86.0" />
                            </font>
@@ -123,12 +123,12 @@
                               <Font name="Source Code Pro Bold" size="86.0" />
                            </font>
                         </Label>
-                        <Label fx:id="prize3number8" layoutX="306.0" layoutY="331.0" text="0000">
+                        <Label fx:id="prize3number8" layoutX="288.0" layoutY="330.0" text="0000">
                            <font>
                               <Font name="Source Code Pro Bold" size="86.0" />
                            </font>
                         </Label>
-                        <Label fx:id="prize3number9" layoutX="549.0" layoutY="331.0" text="0000">
+                        <Label fx:id="prize3number9" layoutX="527.0" layoutY="331.0" text="0000">
                            <font>
                               <Font name="Source Code Pro Bold" size="86.0" />
                            </font>
