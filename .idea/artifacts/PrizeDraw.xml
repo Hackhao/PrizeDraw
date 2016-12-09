@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="PrizeDraw">
+    <output-path>$PROJECT_DIR$/out/artifacts/PrizeDraw</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="dearBug.Main" />
+        <option name="description" value="" />
+        <option name="height" value="646" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+        <option name="width" value="1111" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="PrizeDraw.jar">
+        <element id="module-output" name="PrizeDraw" />
+      </element>
+    </root>
+  </artifact>
+</component>

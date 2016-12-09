@@ -27,13 +27,15 @@
     -fx-text-fill: #383838;
     -fx-font-size: 20px;
     -fx-font-weight: bold;
+    -fx-font-family: "Source Code Pro";
 }
 
 .tab:selected .tab-label {
     -fx-alignment: CENTER;
     -fx-text-fill: #f8f8f8;
-    -fx-font-size: 22px;
+    -fx-font-size: 20px;
     -fx-font-weight: bolder;
+    -fx-font-family: "Source Code Pro";
 }
 
 .tab-pane:top *.tab-header-area {

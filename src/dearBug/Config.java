@@ -11,6 +11,6 @@ public class Config {
     public static int PRIZE_1_NUMBER=1;
     public static int PRIZE_2_NUMBER=3;
     public static int PRIZE_3_NUMBER=10;
-    public static int PRIZE_LUCK_NUMBER=40;
+    public static int PRIZE_LUCKY_NUMBER=30;
 
 }

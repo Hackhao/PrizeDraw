@@ -3,6 +3,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -12,13 +13,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="1111.0" style="-fx-background-color: ab4146;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dearBug.Controller">
    <bottom>
       <Label alignment="CENTER" prefHeight="34.0" prefWidth="731.0" text="2017年南京大学计算机科学与技术系Dear Bug新年晚会" textAlignment="CENTER" textFill="#e8e8e8" BorderPane.alignment="CENTER">
          <font>
-            <Font size="24.0" />
+            <Font name="Source Code Pro" size="24.0" />
          </font></Label>
    </bottom>
    <center>
@@ -35,7 +37,7 @@
                         </Button>
                         <Label layoutX="407.0" layoutY="65.0" text="一等奖" textFill="#f8f8f8">
                             <font>
-                                <Font name="Source Sans Pro Bold" size="80.0" />
+                                <Font name="Source Code Pro Bold" size="80.0" />
                             </font>
                         </Label>
                         <Label fx:id="prize1number" layoutX="284.0" layoutY="164.0" text="0000">
@@ -57,15 +59,16 @@
                         </Button>
                         <Label layoutX="185.0" layoutY="88.0" text="二等奖" textFill="#f8f8f8">
                             <font>
-                                <Font name="Source Sans Pro Bold" size="80.0" />
+                                <Font name="Source Code Pro Bold" size="80.0" />
                             </font>
                         </Label>
-                        <ListView fx:id="prize2numberlist" layoutX="670.0" layoutY="34.0" prefHeight="531.0" prefWidth="366.0" style="-fx-background-color: transparent;" stylesheets="@../res/listViewPrize2.css" />
+                        <ListView fx:id="prize2numberlist" layoutX="670.0" layoutY="50.0" prefHeight="515.0" prefWidth="366.0" style="-fx-background-color: transparent;" stylesheets="@../res/listViewPrize2.css" />
                         <Label fx:id="prize2number" layoutX="128.0" layoutY="207.0" text="0000">
                            <font>
                               <Font name="Source Code Pro Bold" size="150.0" />
                            </font>
                         </Label>
+                        <Line endX="230.0" layoutX="670.0" layoutY="310.0" opacity="0.84" rotate="90.0" startX="-230.0" stroke="#a16946" strokeLineCap="ROUND" strokeWidth="6.0" />
                     </children></AnchorPane>
             </content>
           </Tab>
@@ -80,7 +83,7 @@
                           </Button>
                           <Label layoutX="294.0" layoutY="22.0" text="三等奖" textFill="#f8f8f8">
                               <font>
-                                  <Font name="Source Code Pro Black" size="80.0" />
+                                  <Font name="Source Code Pro Bold" size="80.0" />
                               </font>
                           </Label>
                         <Label fx:id="prize3number1" layoutX="59.0" layoutY="118.0" text="0000">
@@ -88,7 +91,7 @@
                               <Font name="Source Code Pro Bold" size="86.0" />
                            </font>
                         </Label>
-                        <ListView fx:id="prize3numberlist" layoutX="772.0" layoutY="41.0" prefHeight="545.0" prefWidth="286.0" style="-fx-background-color: transparent;" stylesheets="@../res/listViewPrize3.css" />
+                        <ListView fx:id="prize3numberlist" layoutX="805.0" layoutY="27.0" prefHeight="576.0" prefWidth="269.0" style="-fx-background-color: transparent;" stylesheets="@../res/listViewPrize3.css" />
                         <TextField fx:id="prize3add" alignment="CENTER_RIGHT" layoutX="391.0" layoutY="500.0" prefHeight="58.0" prefWidth="132.0" promptText="10">
                            <font>
                               <Font name="Source Code Pro Bold" size="26.0" />
@@ -143,6 +146,7 @@
                               <Font name="Source Code Pro Bold" size="86.0" />
                            </font>
                         </Label>
+                        <Line endX="240.0" layoutX="800.0" layoutY="310.0" opacity="0.86" rotate="90.0" startX="-240.0" stroke="#a16946" strokeLineCap="ROUND" strokeWidth="6.0" />
                       </children></AnchorPane>
               </content>
             </Tab>
@@ -150,14 +154,14 @@
               <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                       <children>
-                          <Button id="prize1" fx:id="prizeLuckyButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="598.0" layoutY="473.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="195.0" stylesheets="@../res/drawButton.css" text="开始" textAlignment="CENTER" textFill="WHITE">
+                          <Button id="prize1" fx:id="prizeLuckyButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="551.0" layoutY="473.0" mnemonicParsing="false" onAction="#drawLuckPrize" prefHeight="73.0" prefWidth="195.0" stylesheets="@../res/drawButton.css" text="开始" textAlignment="CENTER" textFill="WHITE">
                               <font>
                                   <Font name="Source Code Pro Bold" size="36.0" />
                               </font>
                           </Button>
                           <Label layoutX="294.0" layoutY="22.0" text="幸运奖" textFill="#f8f8f8">
                               <font>
-                                  <Font name="Source Code Pro Black" size="80.0" />
+                                  <Font name="Source Code Pro Bold" size="80.0" />
                               </font>
                           </Label>
                           <Label fx:id="prizeLucky1" layoutX="59.0" layoutY="118.0" text="0000">
@@ -165,32 +169,32 @@
                                   <Font name="Source Code Pro Bold" size="86.0" />
                               </font>
                           </Label>
-                          <ListView fx:id="prizeLuckyList" layoutX="804.0" layoutY="41.0" prefHeight="545.0" prefWidth="254.0" />
-                          <TextField fx:id="prizeLuckyAdd" alignment="CENTER_RIGHT" layoutX="432.0" layoutY="500.0" prefHeight="58.0" prefWidth="132.0" promptText="10">
+                          <ListView fx:id="prizeLuckyList" layoutX="805.0" layoutY="23.0" prefHeight="572.0" prefWidth="270.0" style="-fx-background-color: transparent;" stylesheets="@../res/listViewPrize3.css" />
+                          <TextField fx:id="prizeLuckyAdd" alignment="CENTER_RIGHT" layoutX="385.0" layoutY="500.0" prefHeight="58.0" prefWidth="132.0" promptText="10">
                            <font>
                               <Font name="Source Code Pro Bold" size="26.0" />
                            </font></TextField>
-                          <Label layoutX="331.0" layoutY="458.0" prefHeight="32.0" prefWidth="241.0" text="请输入抽奖个数(默认10)" textFill="#ba8baf">
+                          <Label layoutX="284.0" layoutY="458.0" prefHeight="32.0" prefWidth="241.0" text="请输入抽奖个数(默认10)" textFill="#ba8baf">
                               <font>
                                   <Font name="Source Code Pro Bold" size="20.0" />
                               </font>
                           </Label>
-                          <Label fx:id="prizeLucky3" layoutX="552.0" layoutY="117.0" text="0000">
+                          <Label fx:id="prizeLucky3" layoutX="524.0" layoutY="116.0" text="0000">
                               <font>
                                   <Font name="Source Code Pro Bold" size="86.0" />
                               </font>
                           </Label>
-                          <Label fx:id="prizeLucky2" layoutX="309.0" layoutY="117.0" text="0000">
+                          <Label fx:id="prizeLucky2" layoutX="289.0" layoutY="117.0" text="0000">
                               <font>
                                   <Font name="Source Code Pro Bold" size="86.0" />
                               </font>
                           </Label>
-                          <Label fx:id="prizeLucky5" layoutX="306.0" layoutY="222.0" text="0000">
+                          <Label fx:id="prizeLucky5" layoutX="287.0" layoutY="222.0" text="0000">
                               <font>
                                   <Font name="Source Code Pro Bold" size="86.0" />
                               </font>
                           </Label>
-                          <Label fx:id="prizeLucky6" layoutX="549.0" layoutY="222.0" text="0000">
+                          <Label fx:id="prizeLucky6" layoutX="521.0" layoutY="223.0" text="0000">
                               <font>
                                   <Font name="Source Code Pro Bold" size="86.0" />
                               </font>
@@ -200,12 +204,12 @@
                                   <Font name="Source Code Pro Bold" size="86.0" />
                               </font>
                           </Label>
-                          <Label fx:id="prizeLucky8" layoutX="306.0" layoutY="331.0" text="0000">
+                          <Label fx:id="prizeLucky8" layoutX="286.0" layoutY="332.0" text="0000">
                               <font>
                                   <Font name="Source Code Pro Bold" size="86.0" />
                               </font>
                           </Label>
-                          <Label fx:id="prizeLucky9" layoutX="549.0" layoutY="331.0" text="0000">
+                          <Label fx:id="prizeLucky9" layoutX="519.0" layoutY="332.0" text="0000">
                               <font>
                                   <Font name="Source Code Pro Bold" size="86.0" />
                               </font>
@@ -220,12 +224,255 @@
                                   <Font name="Source Code Pro Bold" size="86.0" />
                               </font>
                           </Label>
+                        <Line endX="240.0" layoutX="800.0" layoutY="310.0" opacity="0.86" rotate="90.0" startX="-240.0" stroke="#a16946" strokeLineCap="ROUND" strokeWidth="6.0" />
                       </children></AnchorPane>
               </content>
             </Tab>
-            <Tab text="中奖记录">
+            <Tab fx:id="recordTab" text="中奖记录">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="record4Label" layoutX="49.0" layoutY="379.0" text="幸运奖" textFill="#e8e8e8">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="44.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l9" layoutX="144.0" layoutY="441.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l8" layoutX="37.0" layoutY="441.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l7" layoutX="889.0" layoutY="390.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l6" layoutX="783.0" layoutY="391.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l5" layoutX="676.0" layoutY="391.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l4" layoutX="574.0" layoutY="391.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l3" layoutX="467.0" layoutY="391.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l2" layoutX="359.0" layoutY="391.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l1" layoutX="253.0" layoutY="391.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l10" layoutX="254.0" layoutY="441.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l11" layoutX="360.0" layoutY="441.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l12" layoutX="468.0" layoutY="441.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l13" layoutX="575.0" layoutY="441.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l14" layoutX="677.0" layoutY="441.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l15" layoutX="784.0" layoutY="441.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l16" layoutX="890.0" layoutY="440.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l18" layoutX="143.0" layoutY="485.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l17" layoutX="36.0" layoutY="485.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l27" layoutX="144.0" layoutY="529.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l28" layoutX="253.0" layoutY="527.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l29" layoutX="359.0" layoutY="527.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l30" layoutX="467.0" layoutY="527.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l26" layoutX="37.0" layoutY="529.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l25" layoutX="888.0" layoutY="484.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l24" layoutX="782.0" layoutY="485.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l23" layoutX="675.0" layoutY="485.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l22" layoutX="573.0" layoutY="485.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l21" layoutX="466.0" layoutY="485.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l20" layoutX="358.0" layoutY="485.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r4l19" layoutX="252.0" layoutY="485.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="record3Label" layoutX="50.0" layoutY="246.0" text="三等奖" textFill="#e8e8e8">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="44.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r3l1" layoutX="245.0" layoutY="242.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="50.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r3l2" layoutX="374.0" layoutY="242.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="50.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r3l4" layoutX="633.0" layoutY="243.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="50.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r3l3" layoutX="507.0" layoutY="242.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="50.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r3l5" layoutX="765.0" layoutY="243.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="50.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r3l6" layoutX="897.0" layoutY="243.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="50.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r3l9" layoutX="382.0" layoutY="312.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="50.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r3l10" layoutX="508.0" layoutY="313.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="50.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r3l8" layoutX="249.0" layoutY="312.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="50.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r3l7" layoutX="120.0" layoutY="312.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="50.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="record2Label" layoutX="48.0" layoutY="144.0" text="二等奖" textFill="#e8e8e8">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="44.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r2l1" layoutX="245.0" layoutY="134.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="60.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r2l2" layoutX="401.0" layoutY="133.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="60.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r2l3" layoutX="560.0" layoutY="133.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="60.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="record1Label" layoutX="48.0" layoutY="48.0" text="一等奖" textFill="#e8e8e8">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="44.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="r1l" layoutX="243.0" layoutY="36.0" text="0000" textFill="#a16946">
+                           <font>
+                              <Font name="Source Code Pro Bold" size="65.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
               </content>
             </Tab>
         </tabs>
