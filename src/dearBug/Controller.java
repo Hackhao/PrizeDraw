@@ -169,11 +169,16 @@ public class Controller implements Initializable{
                 @Override
                 public Void call() throws Exception {
                     while (true) {
+
                         String str = String.format("%04d", random.nextInt(Config.SUM_NUMBER));
                         String finalStr = str;
-                        Platform.runLater(() -> prize1number.setText(finalStr));
+                        Platform.runLater(() -> {
+                            if(!isCancelled() && !prize3List.contains(str) && !prize2List.contains(str) && !prize4List.contains(str)){
+                                prize1number.setText(finalStr);
+                            }
+                        });
 
-                        if(isCancelled()){
+                        if(isCancelled()) {
                             updateMessage("Cancelled!");
                             break;
                         }
@@ -199,6 +204,7 @@ public class Controller implements Initializable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            prize1List=new ArrayList<>();
             prize1List.add(prize1number.getText());
             ArrayList<String> record1=new ArrayList<>();
             record1.add(prize1number.getText());
@@ -218,9 +224,14 @@ public class Controller implements Initializable{
                 @Override
                 public Void call() throws Exception {
                     while (true) {
+
                         String str = String.format("%04d", random.nextInt(Config.SUM_NUMBER));
                         String finalStr = str;
-                        Platform.runLater(() -> prize2number.setText(finalStr));
+                        Platform.runLater(() -> {
+                            if(!isCancelled() && !prize2List.contains(str) &&!prize3List.contains(str) && !prize4List.contains(str)){
+                                prize2number.setText(finalStr);
+                            }
+                        });
 
                         if(isCancelled()){
                             updateMessage("Cancelled!");
@@ -282,27 +293,23 @@ public class Controller implements Initializable{
                 @Override
                 public Void call() throws Exception {
                     while (true) {
+
                         Platform.runLater(() -> {
-                            for(int i = 0; i< finalNumber; i++){
-                                prize3LabelArray[i].setTextFill(Color.web("#000000"));
-                                prize3LabelArray[i].setText(String.format("%04d", random.nextInt(Config.SUM_NUMBER)));
-                            }
-                            for(int i=finalNumber;i<Config.PRIZE_3_NUMBER;i++){
-                                prize3LabelArray[i].setTextFill(Color.web("#383838"));
-                                prize3LabelArray[i].setText(String.format("0000"));
+                            if(!isCancelled()) {
+                                for (int i = 0; i < finalNumber; i++) {
+                                    prize3LabelArray[i].setTextFill(Color.web("#000000"));
+                                    String str=String.format("%04d", random.nextInt(Config.SUM_NUMBER));
+                                    if(!prize3List.contains(str) && !prize4List.contains(str)) {
+                                        prize3LabelArray[i].setText(str);
+                                    }
+                                }
+                                for (int i = finalNumber; i < Config.PRIZE_3_NUMBER; i++) {
+                                    prize3LabelArray[i].setTextFill(Color.web("#383838"));
+                                    prize3LabelArray[i].setText(String.format("0000"));
+                                }
                             }
                         });
-
                         if(isCancelled()){
-//                            for(int i=0;i<finalNumber;i++){
-//                                String strtemp=prize3LabelArray[i].getText();
-//                                while(prize3List.contains(strtemp)){
-//                                    strtemp = String.format("%04d", random.nextInt(Config.SUM_NUMBER));
-//                                    String finalStr1 = strtemp;
-//                                    int finalI = i;
-//                                    Platform.runLater(() -> prize3LabelArray[finalI].setText(finalStr1));
-//                                }
-//                            }
                             updateMessage("Cancelled!");
                             break;
                         }
@@ -365,30 +372,27 @@ public class Controller implements Initializable{
                 @Override
                 public Void call() throws Exception {
                     while (true) {
+
                         Platform.runLater(() -> {
-                            for(int i = 0; i< finalNumber; i++){
-                                prize4LabelArray[i].setTextFill(Color.web("#000000"));
-                                prize4LabelArray[i].setText(String.format("%04d", random.nextInt(Config.SUM_NUMBER)));
-                            }
-                            for(int i=finalNumber;i<10;i++){
-                                prize4LabelArray[i].setTextFill(Color.web("#383838"));
-                                prize4LabelArray[i].setText(String.format("0000"));
+                            if(!isCancelled()) {
+                                for (int i = 0; i < finalNumber; i++) {
+                                    prize4LabelArray[i].setTextFill(Color.web("#000000"));
+                                    String string=String.format("%04d", random.nextInt(Config.SUM_NUMBER));
+                                    if(!prize4List.contains(string)){
+                                        prize4LabelArray[i].setText(string);
+                                    }
+                                }
+                                for (int i = finalNumber; i < 10; i++) {
+                                    prize4LabelArray[i].setTextFill(Color.web("#383838"));
+                                    prize4LabelArray[i].setText(String.format("0000"));
+                                }
                             }
                         });
-
                         if(isCancelled()){
-//                            for(int i=0;i<finalNumber;i++){
-//                                String strtemp= prize4LabelArray[i].getText();
-//                                while(prize4List.contains(strtemp)){
-//                                    strtemp = String.format("%04d", random.nextInt(Config.SUM_NUMBER));
-//                                    String finalStr1 = strtemp;
-//                                    int finalI = i;
-//                                    Platform.runLater(() -> prize4LabelArray[finalI].setText(finalStr1));
-//                                }
-//                            }
                             updateMessage("Cancelled!");
                             break;
                         }
+
                         Thread.sleep(10);
                     }
                     return null;
@@ -526,85 +530,69 @@ public class Controller implements Initializable{
         prize4RecordArray[28]=r4l29;
         prize4RecordArray[29]=r4l30;
 
-        record1Label.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if(event.getClickCount() == 2){
-                    deletFile("./1");
-                    r1l.setText("");
-                }
-            }
-        });
-        record2Label.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if(event.getClickCount() == 2){
-                    deletFile("./2");
-                    for(int i=0;i<Config.PRIZE_2_NUMBER;i++){
-                        prize2RecordArray[i].setText("");
-                    }
-                }
-            }
-        });
-        record3Label.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if(event.getClickCount() == 2){
-                    deletFile("./3");
-                    for(int i=0;i<Config.PRIZE_3_NUMBER;i++){
-                        prize3RecordArray[i].setText("");
-                    }
-                }
-            }
-        });
-        record4Label.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if(event.getClickCount() == 2){
-                    deletFile("./4");
-                    for(int i=0;i<Config.PRIZE_LUCKY_NUMBER;i++){
-                        prize4RecordArray[i].setText("");
-                    }
-                }
-            }
-        });
-        recordTab.setOnSelectionChanged(new EventHandler < Event > () {
-
-            @Override
-            public void handle(Event event) {
+        record1Label.setOnMouseClicked(event -> {
+            if(event.getClickCount() == 2){
+                deletFile("./1");
                 r1l.setText("");
+            }
+        });
+        record2Label.setOnMouseClicked(event -> {
+            if(event.getClickCount() == 2){
+                deletFile("./2");
                 for(int i=0;i<Config.PRIZE_2_NUMBER;i++){
                     prize2RecordArray[i].setText("");
                 }
+            }
+        });
+        record3Label.setOnMouseClicked(event -> {
+            if(event.getClickCount() == 2){
+                deletFile("./3");
                 for(int i=0;i<Config.PRIZE_3_NUMBER;i++){
                     prize3RecordArray[i].setText("");
                 }
+            }
+        });
+        record4Label.setOnMouseClicked(event -> {
+            if(event.getClickCount() == 2){
+                deletFile("./4");
                 for(int i=0;i<Config.PRIZE_LUCKY_NUMBER;i++){
                     prize4RecordArray[i].setText("");
                 }
+            }
+        });
+        recordTab.setOnSelectionChanged(event -> {
+            r1l.setText("");
+            for(int i=0;i<Config.PRIZE_2_NUMBER;i++){
+                prize2RecordArray[i].setText("");
+            }
+            for(int i=0;i<Config.PRIZE_3_NUMBER;i++){
+                prize3RecordArray[i].setText("");
+            }
+            for(int i=0;i<Config.PRIZE_LUCKY_NUMBER;i++){
+                prize4RecordArray[i].setText("");
+            }
 
-                prize1List=readFile("./1");
-                if(prize1List!=null && !prize1List.isEmpty()){
-                    r1l.setText(prize1List.get(prize1List.size()-1));
-                }
+            prize1List=readFile("./1");
+            if(prize1List!=null && !prize1List.isEmpty()){
+                r1l.setText(prize1List.get(0));
+            }
 
-                prize2List=readFile("./2");
-                if(prize2List!=null && !prize2List.isEmpty()){
-                   for(int i=0;i<prize2List.size() && i<Config.PRIZE_2_NUMBER;i++){
-                       prize2RecordArray[i].setText(prize2List.get(i));
-                   }
+            prize2List=readFile("./2");
+            if(prize2List!=null && !prize2List.isEmpty()){
+               for(int i=0;i<prize2List.size() && i<Config.PRIZE_2_NUMBER;i++){
+                   prize2RecordArray[i].setText(prize2List.get(i));
+               }
+            }
+            prize3List=readFile("./3");
+            if(prize3List!=null && !prize3List.isEmpty()){
+                for(int i=0;i<prize3List.size() && i<Config.PRIZE_3_NUMBER;i++){
+                    prize3RecordArray[i].setText(prize3List.get(i));
                 }
-                prize3List=readFile("./3");
-                if(prize3List!=null && !prize3List.isEmpty()){
-                    for(int i=0;i<prize3List.size() && i<Config.PRIZE_3_NUMBER;i++){
-                        prize3RecordArray[i].setText(prize3List.get(i));
-                    }
-                }
-                prize4List=readFile("./4");
-                if(prize4List!=null && !prize4List.isEmpty()){
-                    for(int i=0;i<prize4List.size() && i<Config.PRIZE_LUCKY_NUMBER;i++){
-                        prize4RecordArray[i].setText(prize4List.get(i));
-                    }
+            }
+            prize4List=readFile("./4");
+            if(prize4List!=null && !prize4List.isEmpty()){
+                for(int i=0;i<prize4List.size() && i<Config.PRIZE_LUCKY_NUMBER;i++){
+                    prize4RecordArray[i].setText(prize4List.get(i));
                 }
             }
         });
